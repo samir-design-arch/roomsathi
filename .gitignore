@@ -1,3 +1,34 @@
+node_modules/
+.next/
+out/
+dist/
+build/
+/.pnp*
+.pnp.js
+coverage/
+.cache/
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Editor folders
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies

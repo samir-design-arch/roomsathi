@@ -1,3 +1,36 @@
+# roomsathi
+
+Next.js project for Roomsathi — a property listing platform.
+
+Getting started
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run locally:
+
+```
+npm run dev
+```
+
+Build for production:
+
+```
+npm run build
+npm run start
+```
+
+Useful commands
+
+- `npm run lint` — run linter (if configured)
+- `npm test` — run tests (if configured)
+
+License
+
+This repository does not specify a license.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
