@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard - RoomSathi Nepal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo"><div class="logo-icon">🏠</div>RoomSathi</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="search.html">Browse Rooms</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-icon" id="notifBtn">🔔<span class="badge">3</span></button>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <div style="display:flex;align-items:center;gap:var(--space-sm)">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--primary-50);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--primary)">AS</div>
+        <span style="font-size:0.8125rem;font-weight:600">Anjali</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-layout">
+  <aside class="dashboard-sidebar">
+    <a href="index.html" class="logo" style="font-size:1.25rem"><div class="logo-icon">🏠</div>RoomSathi</a>
+    
+    <div class="dashboard-nav-item active">📊 Dashboard</div>
+    <div class="dashboard-nav-item">❤️ Saved Listings</div>
+    <div class="dashboard-nav-item">📅 My Bookings</div>
+    <div class="dashboard-nav-item">💬 Messages <span style="margin-left:auto;background:var(--error);color:white;padding:2px 8px;border-radius:var(--radius-full);font-size:0.6875rem;font-weight:700">2</span></div>
+    <div class="dashboard-nav-item">🤖 AI Matches</div>
+    <div class="dashboard-nav-item">👥 Roommate Search</div>
+    <div class="dashboard-nav-item">📋 Rental Agreement</div>
+    <div class="dashboard-nav-item">💳 Payments</div>
+    <div class="dashboard-nav-item">🕐 Recently Viewed</div>
+    <div class="dashboard-nav-item">⚙️ Settings</div>
+    
+    <div style="margin-top:auto;padding-top:var(--space-xl);border-top:1px solid rgba(255,255,255,0.1)">
+      <div class="dashboard-nav-item">🚪 Sign Out</div>
+    </div>
+  </aside>
+  
+  <main class="dashboard-main">
+    <div class="dashboard-header">
+      <div>
+        <h1>Student Dashboard 👋</h1>
+        <p style="color:var(--gray-500);font-size:0.9375rem">Welcome back, Anjali! Your room search journey.</p>
+      </div>
+      <a href="search.html" class="btn btn-primary">🔍 Find Rooms</a>
+    </div>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:var(--primary-50);color:var(--primary)">❤️</div>
+        <div class="stat-card-value" data-count="8">0</div>
+        <div class="stat-card-label">Saved Listings</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:#D1FAE5;color:#059669">📅</div>
+        <div class="stat-card-value" data-count="3">0</div>
+        <div class="stat-card-label">Scheduled Visits</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:#FEF3C7;color:#D97706">🤖</div>
+        <div class="stat-card-value" data-count="5">0</div>
+        <div class="stat-card-label">AI Recommendations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:#DBEAFE;color:#2563EB">💬</div>
+        <div class="stat-card-value" data-count="2">0</div>
+        <div class="stat-card-label">Unread Messages</div>
+      </div>
+    </div>
+    
+    <!-- AI Recommendations -->
+    <div style="background:linear-gradient(135deg,var(--primary-50),var(--white));border-radius:var(--radius-lg);padding:var(--space-xl);margin-bottom:var(--space-xl);border:1px solid var(--primary-100)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-lg);flex-wrap:wrap;gap:var(--space-md)">
+        <div>
+          <div class="section-label" style="margin-bottom:var(--space-xs)">🤖 AI Recommendations</div>
+          <h4>Based on your preferences, we found these matches</h4>
+        </div>
+        <a href="index.html#aiSection" class="btn btn-primary btn-sm">Update Preferences</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)">
+        <div style="display:flex;gap:var(--space-md);background:var(--white);border-radius:var(--radius-md);padding:var(--space-md);box-shadow:var(--shadow-sm)">
+          <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=120" style="width:80px;height:80px;border-radius:var(--radius-md);object-fit:cover" alt="Room">
+          <div>
+            <div style="font-weight:600;font-size:0.875rem">Modern Studio</div>
+            <div style="font-size:0.75rem;color:var(--gray-500)">Pulchowk · 0.5 km</div>
+            <div style="font-weight:700;color:var(--primary);margin:4px 0">NPR 15,000/mo</div>
+            <div style="display:flex;gap:4px">
+              <span class="listing-amenity">🎯 95% Match</span>
+              <span class="listing-amenity">✓ Verified</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-md);background:var(--white);border-radius:var(--radius-md);padding:var(--space-md);box-shadow:var(--shadow-sm)">
+          <img src="https://images.unsplash.com/photo-1598928506311-c55ez2c0d8ea?w=120" style="width:80px;height:80px;border-radius:var(--radius-md);object-fit:cover" alt="Room">
+          <div>
+            <div style="font-weight:600;font-size:0.875rem">Girls Hostel</div>
+            <div style="font-size:0.75rem;color:var(--gray-500)">Kirtipur · 1.2 km</div>
+            <div style="font-weight:700;color:var(--primary);margin:4px 0">NPR 8,000/mo</div>
+            <div style="display:flex;gap:4px">
+              <span class="listing-amenity">🎯 88% Match</span>
+              <span class="listing-amenity">🍽️ Food</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Upcoming Visits -->
+    <div style="background:var(--white);border-radius:var(--radius-lg);padding:var(--space-xl);box-shadow:var(--shadow-card);margin-bottom:var(--space-xl)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-lg)">
+        <h4>📅 Upcoming Visits</h4>
+        <a href="#" style="font-size:0.8125rem;color:var(--primary);font-weight:600">View All</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-md)">
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-md);background:var(--gray-50);border-radius:var(--radius-md)">
+          <div style="width:48px;height:48px;background:var(--primary-50);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--primary);font-weight:800;line-height:1.2">
+            <span style="font-size:0.625rem;font-weight:600">JUL</span>
+            <span style="font-size:1rem">15</span>
+          </div>
+          <div style="flex:1">
+            <div style="font-weight:600;font-size:0.9375rem">Modern Studio Apartment</div>
+            <div style="font-size:0.8125rem;color:var(--gray-500)">📍 Pulchowk, Lalitpur · 3:00 PM</div>
+          </div>
+          <span class="status-badge status-active">Confirmed</span>
+          <button class="btn btn-sm btn-outline">Reschedule</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-md);background:var(--gray-50);border-radius:var(--radius-md)">
+          <div style="width:48px;height:48px;background:var(--primary-50);border-radius:var(--radius-md);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--primary);font-weight:800;line-height:1.2">
+            <span style="font-size:0.625rem;font-weight:600">JUL</span>
+            <span style="font-size:1rem">18</span>
+          </div>
+          <div style="flex:1">
+            <div style="font-weight:600;font-size:0.9375rem">Girls Hostel - Near TU</div>
+            <div style="font-size:0.8125rem;color:var(--gray-500)">📍 Kirtipur · 11:00 AM</div>
+          </div>
+          <span class="status-badge status-pending">Pending</span>
+          <button class="btn btn-sm btn-outline">Reschedule</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Recent Activity / Messages -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-lg)">
+      <div style="background:var(--white);border-radius:var(--radius-lg);padding:var(--space-xl);box-shadow:var(--shadow-card)">
+        <h4 style="margin-bottom:var(--space-lg)">💬 Recent Messages</h4>
+        <div style="display:flex;flex-direction:column;gap:var(--space-md)">
+          <div style="display:flex;gap:var(--space-sm);padding-bottom:var(--space-md);border-bottom:1px solid var(--gray-100)">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--primary-50);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary);font-size:0.75rem">RK</div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;font-size:0.8125rem">
+                <span style="font-weight:600">Rajesh KC</span>
+                <span style="color:var(--gray-500)">5 min ago</span>
+              </div>
+              <div style="font-size:0.8125rem;color:var(--gray-500)">Your visit is confirmed for Jul 15 at 3 PM...</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:var(--space-sm)">
+            <div style="width:36px;height:36px;border-radius:50%;background:#D1FAE5;display:flex;align-items:center;justify-content:center;font-weight:700;color:#059669;font-size:0.75rem">SH</div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;font-size:0.8125rem">
+                <span style="font-weight:600">Sathi AI</span>
+                <span style="color:var(--gray-500)">1 hour ago</span>
+              </div>
+              <div style="font-size:0.8125rem;color:var(--gray-500)">I found 3 new rooms matching your preferences...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-lg);padding:var(--space-xl);box-shadow:var(--shadow-card)">
+        <h4 style="margin-bottom:var(--space-lg)">📋 Move-in Checklist</h4>
+        <div style="display:flex;flex-direction:column;gap:var(--space-sm)">
+          <label class="filter-checkbox" style="padding:var(--space-sm) 0"><input type="checkbox"> Sign rental agreement</label>
+          <label class="filter-checkbox" style="padding:var(--space-sm) 0"><input type="checkbox" checked> Pay security deposit</label>
+          <label class="filter-checkbox" style="padding:var(--space-sm) 0"><input type="checkbox"> Get room keys</label>
+          <label class="filter-checkbox" style="padding:var(--space-sm) 0"><input type="checkbox"> Set up WiFi connection</label>
+          <label class="filter-checkbox" style="padding:var(--space-sm) 0"><input type="checkbox" checked> Notify college address change</label>
+          <label class="filter-checkbox" style="padding:var(--space-sm) 0"><input type="checkbox"> Buy essentials (mattress, etc.)</label>
+          <label class="filter-checkbox" style="padding:var(--space-sm) 0"><input type="checkbox"> Emergency contacts saved</label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Roommate Matching -->
+    <div style="margin-top:var(--space-xl);background:var(--white);border-radius:var(--radius-lg);padding:var(--space-xl);box-shadow:var(--shadow-card)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-lg);flex-wrap:wrap;gap:var(--space-md)">
+        <div>
+          <h4>👥 Find Roommates</h4>
+          <p style="font-size:0.8125rem;color:var(--gray-500)">Connect with students looking for roommates</p>
+        </div>
+        <button class="btn btn-primary btn-sm">Find Roommates</button>
+      </div>
+      <div style="display:flex;gap:var(--space-md);flex-wrap:wrap">
+        <div style="flex:1;min-width:180px;padding:var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);text-align:center">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--primary-50);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-sm);font-weight:700;color:var(--primary)">SP</div>
+          <div style="font-weight:600;font-size:0.875rem">Sita P.</div>
+          <div style="font-size:0.75rem;color:var(--gray-500)">Pulchowk Campus</div>
+          <div style="font-size:0.75rem;color:var(--gray-500)">Budget: NPR 12K</div>
+          <button class="btn btn-sm btn-outline mt-lg" style="width:100%">Connect</button>
+        </div>
+        <div style="flex:1;min-width:180px;padding:var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);text-align:center">
+          <div style="width:48px;height:48px;border-radius:50%;background:#D1FAE5;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-sm);font-weight:700;color:#059669">RM</div>
+          <div style="font-weight:600;font-size:0.875rem">Rohan M.</div>
+          <div style="font-size:0.75rem;color:var(--gray-500)">TU Kirtipur</div>
+          <div style="font-size:0.75rem;color:var(--gray-500)">Budget: NPR 8K</div>
+          <button class="btn btn-sm btn-outline mt-lg" style="width:100%">Connect</button>
+        </div>
+        <div style="flex:1;min-width:180px;padding:var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);text-align:center">
+          <div style="width:48px;height:48px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-sm);font-weight:700;color:#DC2626">PD</div>
+          <div style="font-weight:600;font-size:0.875rem">Pooja D.</div>
+          <div style="font-size:0.75rem;color:var(--gray-500)">Padma Kanya</div>
+          <div style="font-size:0.75rem;color:var(--gray-500)">Budget: NPR 10K</div>
+          <button class="btn btn-sm btn-outline mt-lg" style="width:100%">Connect</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

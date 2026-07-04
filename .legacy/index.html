@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoomSathi - Find Your Perfect Room in Nepal, No Broker Fees</title>
+  <meta name="description" content="Verified rooms, hostels, and flats across Kathmandu with real-time availability, virtual tours, and AI-powered recommendations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ======= HEADER ======= -->
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🏠</div>
+      RoomSathi
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="search.html">Browse Rooms</a>
+      <a href="dashboard-landlord.html">List Property</a>
+      <a href="dashboard-student.html">Dashboard</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-icon" id="notifBtn" title="Notifications">
+        🔔
+        <span class="badge">3</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" title="Toggle Theme">🌙</button>
+      <a href="auth.html" class="btn btn-primary btn-sm">Sign In</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ======= HERO SECTION ======= -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600" alt="Kathmandu Skyline">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-particles" id="heroParticles"></div>
+  
+  <div class="hero-content container">
+    <div class="hero-badge">
+      <span>🏔️</span>
+      Trusted by 5,000+ Students in Kathmandu Valley
+    </div>
+    
+    <h1 class="hero-title">
+      Find Your Next Room<br><span>Without Paying a Broker</span>
+    </h1>
+    
+    <p class="hero-subtitle">
+      Verified rooms, hostels, and flats across Kathmandu with real-time availability, 
+      virtual tours, and AI-powered recommendations.
+    </p>
+    
+    <div class="hero-actions">
+      <a href="search.html" class="btn btn-primary btn-lg">
+        🔍 Find a Room
+      </a>
+      <a href="dashboard-landlord.html" class="btn btn-secondary btn-lg" style="background:rgba(255,255,255,0.15);color:white;border-color:rgba(255,255,255,0.3);">
+        📋 List Your Property
+      </a>
+      <a href="#aiSection" class="btn btn-ghost btn-lg" style="color:white;">
+        ✨ AI Match
+      </a>
+    </div>
+    
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-number">5,000+</div>
+        <div class="hero-stat-label">Students Housed</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">2,500+</div>
+        <div class="hero-stat-label">Verified Properties</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">50+</div>
+        <div class="hero-stat-label">College Partnerships</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">₹0</div>
+        <div class="hero-stat-label">Broker Fees</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SEARCH CARD ======= -->
+<div class="hero-search-card container">
+  <div class="search-grid">
+    <div class="search-group">
+      <label>📍 Location</label>
+      <select>
+        <option>All Kathmandu Valley</option>
+        <option>Kirtipur</option>
+        <option>Pulchowk, Lalitpur</option>
+        <option>New Baneshwor</option>
+        <option>Jawalakhel</option>
+        <option>Dhulikhel</option>
+        <option>Budhanilkantha</option>
+        <option>Chhauni</option>
+        <option>Dhapakhel</option>
+        <option>Baluwatar</option>
+        <option>Kalimati</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <label>🏠 Room Type</label>
+      <select>
+        <option>All Types</option>
+        <option>Studio</option>
+        <option>Hostel</option>
+        <option>Flat</option>
+        <option>Room</option>
+        <option>PG</option>
+        <option>Apartment</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <label>👤 Gender</label>
+      <select>
+        <option>Boys & Girls</option>
+        <option>Boys Only</option>
+        <option>Girls Only</option>
+        <option>Family</option>
+        <option>Any</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <label>🎓 College Nearby</label>
+      <select>
+        <option>Any College</option>
+        <option>Pulchowk Engineering Campus</option>
+        <option>Tribhuvan University</option>
+        <option>Kathmandu University</option>
+        <option>St. Xavier's College</option>
+        <option>Padma Kanya College</option>
+        <option>Kantipur Engineering College</option>
+        <option>Himalaya College</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="search-row">
+    <div class="search-group" style="flex:1;min-width:200px">
+      <label>💰 Budget: <span class="budget-display" id="budgetDisplay">NPR 25,000</span></label>
+      <input type="range" id="budgetSlider" min="3000" max="50000" value="25000" step="1000">
+    </div>
+    <div class="search-group" style="flex:0 0 160px">
+      <label>📅 Move-in Date</label>
+      <input type="date" value="2026-07-15">
+    </div>
+    <div class="search-actions">
+      <button class="btn btn-primary" id="heroSearchBtn">🔍 Search</button>
+      <button class="ai-match-btn" id="aiMatchBtn">
+        ✨ AI Match
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= FEATURED LISTINGS ======= -->
+<section class="featured-listings section" id="listings">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">🏆 Featured</div>
+      <h2 class="section-title">Popular Near Your Campus</h2>
+      <p class="section-subtitle">Handpicked verified properties with the best value for students</p>
+    </div>
+    
+    <div class="listing-grid" data-featured></div>
+    
+    <div style="text-align:center;margin-top:var(--space-2xl)" class="fade-in">
+      <a href="search.html" class="btn btn-primary btn-lg">View All Properties →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======= AI ROOM FINDER ======= -->
+<section class="ai-section section" id="aiSection">
+  <div class="container ai-container">
+    <div class="ai-content">
+      <div class="section-label" style="color:var(--primary)">✨ AI Room Finder</div>
+      <h2 class="section-title">Let AI Find Your<br>Perfect Room</h2>
+      <p class="section-subtitle" style="text-align:left;margin:0 0 var(--space-lg)">
+        Answer a few questions and our AI will recommend the best room for you.
+      </p>
+      
+      <form id="aiForm">
+        <div class="ai-questions">
+          <div class="ai-question">
+            <label>💰 Monthly Budget</label>
+            <select id="aiBudget" required>
+              <option value="5000">Under NPR 5,000</option>
+              <option value="10000">NPR 5,000 - 10,000</option>
+              <option value="15000" selected>NPR 10,000 - 15,000</option>
+              <option value="25000">NPR 15,000 - 25,000</option>
+              <option value="35000">NPR 25,000 - 35,000</option>
+              <option value="50000">NPR 35,000+</option>
+            </select>
+          </div>
+          <div class="ai-question">
+            <label>🎓 Your College</label>
+            <select id="aiCollege">
+              <option>Pulchowk Engineering Campus</option>
+              <option>Tribhuvan University</option>
+              <option>Kathmandu University</option>
+              <option>St. Xavier's College</option>
+              <option>Padma Kanya College</option>
+              <option>Kantipur Engineering College</option>
+            </select>
+          </div>
+          <div class="ai-question">
+            <label>⏱️ Preferred Travel Time</label>
+            <select id="aiTravel">
+              <option>Under 10 min</option>
+              <option selected>10 - 20 min</option>
+              <option>20 - 30 min</option>
+              <option>30+ min</option>
+            </select>
+          </div>
+          <div class="ai-question">
+            <label>🍽️ Food Preference</label>
+            <select id="aiFood">
+              <option value="yes">Want food included</option>
+              <option value="no">Self-cook / Outside</option>
+            </select>
+          </div>
+          <div class="ai-question">
+            <label>🌿 Environment</label>
+            <select id="aiEnv">
+              <option>Quiet & Study-friendly</option>
+              <option>Social & Lively</option>
+              <option>Balanced</option>
+            </select>
+          </div>
+          <div class="ai-question">
+            <label>🛋️ Furnished?</label>
+            <select id="aiFurnished">
+              <option value="yes">Fully Furnished</option>
+              <option value="no">Unfurnished</option>
+              <option value="yes">Semi-furnished</option>
+            </select>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
+          ✨ Find My Perfect Room
+        </button>
+      </form>
+      
+      <div class="ai-result" id="aiResult"></div>
+    </div>
+    
+    <div class="ai-visual">
+      <div class="ai-orb">
+        <div class="ai-orb-inner"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= MAP SECTION ======= -->
+<section class="map-section section" id="map">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">🗺️ Interactive Map</div>
+      <h2 class="section-title">Explore Kathmandu Valley</h2>
+      <p class="section-subtitle">Find rooms, hostels, and amenities near your campus</p>
+    </div>
+    
+    <div class="map-container fade-in">
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.912164871012!2d85.320576!3d27.700769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190000000001%3A0x5c7f3c0a7c0a7c0a!2sKathmandu%2C+Nepal!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="map-sidebar">
+        <h4 style="margin-bottom:var(--space-lg)">Filter Map</h4>
+        <div class="map-filters">
+          <div class="map-filter-group">
+            <label>💰 Max Budget</label>
+            <input type="range" min="3000" max="50000" value="25000">
+          </div>
+          <div class="map-filter-group">
+            <label>🏠 Property Type</label>
+            <select>
+              <option>All Types</option>
+              <option>Rooms</option>
+              <option>Hostels</option>
+              <option>Flats</option>
+              <option>Apartments</option>
+            </select>
+          </div>
+          <div class="map-filter-group">
+            <label>🔍 Show</label>
+            <select>
+              <option>All Properties</option>
+              <option>Available Now</option>
+              <option>Verified Only</option>
+              <option>Near My College</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center">Update Map</button>
+        </div>
+        <div class="map-legend">
+          <div class="map-legend-item"><span class="map-dot" style="background:var(--primary)"></span> Available Rooms</div>
+          <div class="map-legend-item"><span class="map-dot" style="background:var(--success)"></span> Hostels</div>
+          <div class="map-legend-item"><span class="map-dot" style="background:var(--warning)"></span> Colleges</div>
+          <div class="map-legend-item"><span class="map-dot" style="background:var(--error)"></span> Hospitals</div>
+          <div class="map-legend-item"><span class="map-dot" style="background:var(--info)"></span> Bus Stops</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= WHY CHOOSE US ======= -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">💎 Why RoomSathi</div>
+      <h2 class="section-title">No More Broker Hassles</h2>
+      <p class="section-subtitle">Everything you need to find the perfect home, all in one place</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🕊️</div>
+        <div class="feature-title">No Broker Fees</div>
+        <div class="feature-desc">Connect directly with verified landlords. Zero commission, zero middlemen. Save thousands on broker fees.</div>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">✓</div>
+        <div class="feature-title">Verified Properties</div>
+        <div class="feature-desc">Every property is physically verified by our team. Real photos, real prices, real availability.</div>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">⭐</div>
+        <div class="feature-title">Real Reviews</div>
+        <div class="feature-desc">Read honest reviews from current and past tenants. Know exactly what you're getting into.</div>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🟢</div>
+        <div class="feature-title">Live Availability</div>
+        <div class="feature-desc">Real-time availability status. No more calling to find out a room is already taken.</div>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">📝</div>
+        <div class="feature-title">Digital Agreement</div>
+        <div class="feature-desc">Legally binding digital rental agreements. E-sign from your phone. No paperwork needed.</div>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-title">Safe Payments</div>
+        <div class="feature-desc">Secure online payments with escrow protection. Pay only when you move in.</div>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🤖</div>
+        <div class="feature-title">AI Recommendations</div>
+        <div class="feature-desc">Our AI learns your preferences and recommends the perfect room. Smarter search, better matches.</div>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">👥</div>
+        <div class="feature-title">Roommate Matching</div>
+        <div class="feature-desc">Find compatible roommates based on lifestyle, study habits, and budget preferences.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= REVIEWS ======= -->
+<section class="reviews-section section" id="reviews">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">💬 Student Reviews</div>
+      <h2 class="section-title">What Students Say</h2>
+      <p class="section-subtitle">Real stories from students who found their perfect home through RoomSathi</p>
+    </div>
+    
+    <div class="reviews-carousel" id="reviewsTrack"></div>
+    
+    <div class="review-nav">
+      <button class="review-nav-btn" id="reviewPrev">←</button>
+      <button class="review-nav-btn" id="reviewNext">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======= MOBILE APP ======= -->
+<section class="app-section section">
+  <div class="container app-container">
+    <div class="app-content fade-in">
+      <div class="section-label" style="color:rgba(255,255,255,0.8)">📱 Mobile App</div>
+      <h2>Find Rooms On The Go</h2>
+      <p>Download the RoomSathi app for Android and iOS. Get instant notifications, chat with landlords, and book visits from your phone.</p>
+      <div class="app-badges">
+        <a href="#" class="app-badge">
+          <span style="font-size:1.25rem">▶</span>
+          Google Play
+        </a>
+        <a href="#" class="app-badge">
+          <span style="font-size:1.25rem">🍎</span>
+          App Store
+        </a>
+      </div>
+      <div style="margin-top:var(--space-xl);display:flex;gap:var(--space-md);flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:var(--space-sm);color:rgba(255,255,255,0.8);font-size:0.8125rem">
+          <span>✓</span> AI Chat Assistant
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-sm);color:rgba(255,255,255,0.8);font-size:0.8125rem">
+          <span>✓</span> Virtual Tours
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-sm);color:rgba(255,255,255,0.8);font-size:0.8125rem">
+          <span>✓</span> Roommate Matching
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-sm);color:rgba(255,255,255,0.8);font-size:0.8125rem">
+          <span>✓</span> Online Rent Payment
+        </div>
+      </div>
+    </div>
+    
+    <div class="app-phones fade-in">
+      <div class="app-phone" style="transform:rotate(-8deg) translateY(20px);z-index:1">
+        <div class="app-phone-screen" style="background:linear-gradient(180deg, #2563EB, #1D4ED8);padding:24px 16px">
+          <div class="app-phone-notch"></div>
+          <div style="color:white;padding-top:20px">
+            <div style="font-size:0.7rem;opacity:0.8">9:41</div>
+            <div style="font-size:1rem;font-weight:700;margin:12px 0">RoomSathi</div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px;margin-bottom:8px">
+              <div style="font-size:0.6rem;opacity:0.7">Near You</div>
+              <div style="font-size:0.7rem;font-weight:600">Modern Studio</div>
+              <div style="font-size:0.65rem;opacity:0.8">NPR 15,000/mo</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px;margin-bottom:8px">
+              <div style="font-size:0.6rem;opacity:0.7">Recommended</div>
+              <div style="font-size:0.7rem;font-weight:600">Girls Hostel</div>
+              <div style="font-size:0.65rem;opacity:0.8">NPR 8,000/mo</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:8px;padding:10px">
+              <div style="font-size:0.6rem;opacity:0.7">AI Pick</div>
+              <div style="font-size:0.7rem;font-weight:600">Premium 1BHK</div>
+              <div style="font-size:0.65rem;opacity:0.8">NPR 25,000/mo</div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:8px;color:rgba(255,255,255,0.4);font-size:0.65rem">Android</div>
+      </div>
+      <div class="app-phone" style="transform:rotate(5deg) translateY(-10px);z-index:2">
+        <div class="app-phone-screen" style="background:linear-gradient(180deg, #1F2937, #111827);padding:24px 16px">
+          <div class="app-phone-notch"></div>
+          <div style="color:white;padding-top:20px">
+            <div style="font-size:0.7rem;opacity:0.8">9:41</div>
+            <div style="font-size:1rem;font-weight:700;margin:12px 0">RoomSathi</div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+              <div style="background:rgba(16,185,129,0.2);border-radius:16px;padding:4px 8px;font-size:0.6rem;color:#10B981">✓ Verified</div>
+              <div style="font-size:0.65rem;opacity:0.6">📍 0.5 km</div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=200" style="border-radius:8px;width:100%;height:80px;object-fit:cover;margin-bottom:8px" alt="Room preview">
+            <div style="font-size:0.75rem;font-weight:600">Modern Studio</div>
+            <div style="font-size:0.65rem;opacity:0.6">Pulchowk, Lalitpur</div>
+            <div style="display:flex;gap:4px;margin:8px 0">
+              <span style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;font-size:0.55rem">🍽️</span>
+              <span style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;font-size:0.55rem">📶</span>
+              <span style="background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;font-size:0.55rem">💧</span>
+            </div>
+            <div style="background:var(--primary);border-radius:20px;padding:8px 16px;text-align:center;font-size:0.65rem;font-weight:600">Book Visit</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:8px;color:rgba(255,255,255,0.4);font-size:0.65rem">iOS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🏠</div>
+          RoomSathi
+        </a>
+        <p>Nepal's most trusted platform for finding rooms, hostels, and flats. No broker fees, verified properties, AI-powered matching.</p>
+        <div style="margin-top:var(--space-lg);display:flex;gap:var(--space-sm);font-size:0.8125rem;color:rgba(255,255,255,0.5)">
+          Made with ❤️ in Kathmandu, Nepal
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Partnerships</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>For Students</h4>
+        <ul class="footer-links">
+          <li><a href="search.html">Browse Rooms</a></li>
+          <li><a href="#">AI Room Finder</a></li>
+          <li><a href="#">Roommate Matching</a></li>
+          <li><a href="#">Student Reviews</a></li>
+          <li><a href="#">Move-in Checklist</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>For Landlords</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard-landlord.html">List Property</a></li>
+          <li><a href="#">Landlord Dashboard</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Success Stories</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Safety Tips</a></li>
+          <li><a href="#">Scam Reporting</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Emergency Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div>© 2026 RoomSathi. All rights reserved.</div>
+      <div class="footer-social">
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="Instagram">◻</a>
+        <a href="#" title="Twitter">𝕏</a>
+        <a href="#" title="WhatsApp">💬</a>
+        <a href="#" title="YouTube">▶</a>
+      </div>
+      <div style="display:flex;gap:var(--space-md)">
+        <a href="#" style="color:rgba(255,255,255,0.6);font-size:0.8125rem">Privacy</a>
+        <a href="#" style="color:rgba(255,255,255,0.6);font-size:0.8125rem">Terms</a>
+        <a href="#" style="color:rgba(255,255,255,0.6);font-size:0.8125rem">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======= AI CHAT ASSISTANT ======= -->
+<button class="chat-bubble" id="chatBubble">💬</button>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-header-left">
+      <div class="chat-avatar">🤖</div>
+      <div>
+        <h4>Sathi AI</h4>
+        <p>Online • RoomSathi Assistant</p>
+      </div>
+    </div>
+    <button class="chat-close" id="chatClose">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input-wrap">
+    <input type="text" id="chatInput" placeholder="Ask about rooms, prices, areas..." autocomplete="off">
+    <button class="chat-send" id="chatSend">➤</button>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

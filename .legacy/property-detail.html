@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Details - RoomSathi Nepal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🏠</div>
+      RoomSathi
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="search.html">Browse Rooms</a>
+      <a href="dashboard-landlord.html">List Property</a>
+      <a href="dashboard-student.html">Dashboard</a>
+      <a href="index.html#reviews">Reviews</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-icon" id="notifBtn">🔔<span class="badge">3</span></button>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <a href="auth.html" class="btn btn-primary btn-sm">Sign In</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<div style="padding-top:calc(var(--header-height) + var(--space-lg));background:var(--gray-50);border-bottom:1px solid var(--gray-100)">
+  <div class="container">
+    <div style="font-size:0.8125rem;color:var(--gray-500);margin-bottom:var(--space-md)">
+      <a href="index.html" style="color:var(--gray-500)">Home</a> / <a href="search.html" style="color:var(--gray-500)">Search</a> / <span style="color:var(--gray-700)" id="propertyTitle">Property Name</span>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:var(--space-xl);padding-bottom:var(--space-3xl)">
+  <!-- Gallery -->
+  <div class="property-gallery" id="propertyGallery"></div>
+  
+  <!-- Detail Layout -->
+  <div class="property-detail-layout">
+    <!-- Left: Property Info -->
+    <div class="property-info">
+      <div style="display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-sm);flex-wrap:wrap">
+        <span class="listing-badge badge-verified">✓ Verified</span>
+        <span class="listing-badge badge-available">● Available Now</span>
+      </div>
+      <h1 id="propertyTitleMain">Modern Studio Apartment near Pulchowk Campus</h1>
+      <div style="font-size:0.9375rem;color:var(--gray-500);margin-bottom:var(--space-md)" id="propertyLocation">📍 Pulchowk, Lalitpur</div>
+      
+      <div class="property-meta">
+        <div class="property-meta-item">🏠 Type: <strong id="propertyType">Studio</strong></div>
+        <div class="property-meta-item">👤 For: <strong id="propertyGender">Boys & Girls</strong></div>
+        <div class="property-meta-item">📍 Distance: <strong id="propertyDist">0.5 km</strong> to college</div>
+        <div class="property-meta-item" id="propertyAvail">✅ Available Now</div>
+        <div class="property-meta-item" id="propertyFurnished">✅ Fully Furnished</div>
+      </div>
+      
+      <h3 style="margin-bottom:var(--space-md)">Amenities</h3>
+      <div class="property-amenities-grid" id="propertyAmenities"></div>
+      
+      <h3 style="margin-bottom:var(--space-md)">Description</h3>
+      <p style="color:var(--gray-600);line-height:1.8;margin-bottom:var(--space-xl)">
+        A beautiful and modern studio apartment located in the heart of Pulchowk, just a 5-minute walk from Pulchowk Engineering Campus. 
+        This fully furnished unit comes with a comfortable bed, study desk, wardrobe, and an attached bathroom with geyser. 
+        Building has 24/7 security, CCTV surveillance, and high-speed WiFi. 
+        Ideal for students and young professionals looking for a premium living space in a quiet neighborhood.
+        <br><br>
+        Monthly rent includes water and WiFi. Electricity charged separately as per meter. 
+        Cooking allowed in designated area. Laundry available on premises. 
+        Easy access to public transport, restaurants, and supermarkets.
+      </p>
+      
+      <h3 style="margin-bottom:var(--space-md)">🏫 Nearby Colleges</h3>
+      <div style="display:flex;flex-direction:column;gap:var(--space-sm);margin-bottom:var(--space-xl)">
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-sm) var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);font-size:0.875rem">
+          <span>📚</span> Pulchowk Engineering Campus <span style="color:var(--gray-500);margin-left:auto">0.5 km</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-sm) var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);font-size:0.875rem">
+          <span>📚</span> St. Xavier's College <span style="color:var(--gray-500);margin-left:auto">2.1 km</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-sm) var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);font-size:0.875rem">
+          <span>📚</span> Kathmandu University School of Management <span style="color:var(--gray-500);margin-left:auto">3.5 km</span>
+        </div>
+      </div>
+      
+      <h3 style="margin-bottom:var(--space-md)">📍 Nearby Places</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);margin-bottom:var(--space-xl)">
+        <div style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);font-size:0.8125rem">
+          <span>🍽️</span> Restaurants (8 nearby)
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);font-size:0.8125rem">
+          <span>🏋️</span> Gyms (3 nearby)
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);font-size:0.8125rem">
+          <span>🚌</span> Bus Stop (2 min walk)
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);font-size:0.8125rem">
+          <span>🏥</span> Hospital (1.5 km)
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);font-size:0.8125rem">
+          <span>🏧</span> ATM (0.3 km)
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-md);background:var(--gray-50);border-radius:var(--radius-md);font-size:0.8125rem">
+          <span>🛒</span> Supermarket (0.5 km)
+        </div>
+      </div>
+      
+      <h3 style="margin-bottom:var(--space-md)">📝 Reviews from Tenants</h3>
+      <div style="display:flex;flex-direction:column;gap:var(--space-md)">
+        <div style="background:var(--gray-50);border-radius:var(--radius-md);padding:var(--space-md)">
+          <div style="display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-sm)">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--primary-100);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary);font-size:0.8125rem">AS</div>
+            <div>
+              <div style="font-weight:600;font-size:0.875rem">Anjila</div>
+              <div style="font-size:0.75rem;color:var(--gray-500)">Student at Pulchowk Campus</div>
+            </div>
+            <div style="margin-left:auto;color:#F59E0B;font-size:0.8125rem">★★★★★</div>
+          </div>
+          <p style="font-size:0.8125rem;color:var(--gray-600)">Great place! Very close to college, clean rooms, and the landlord is really helpful. WiFi works great for online classes.</p>
+        </div>
+        <div style="background:var(--gray-50);border-radius:var(--radius-md);padding:var(--space-md)">
+          <div style="display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-sm)">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--primary-100);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary);font-size:0.8125rem">RP</div>
+            <div>
+              <div style="font-weight:600;font-size:0.875rem">Rajesh</div>
+              <div style="font-size:0.75rem;color:var(--gray-500)">Working Professional</div>
+            </div>
+            <div style="margin-left:auto;color:#F59E0B;font-size:0.8125rem">★★★★☆</div>
+          </div>
+          <p style="font-size:0.8125rem;color:var(--gray-600)">Good value for money. The attached bathroom is clean, and the building feels safe. Would recommend.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right: Sidebar -->
+    <div>
+      <div class="property-sidebar-card" id="propertySidebar"></div>
+      
+      <!-- Landlord Card -->
+      <div class="property-sidebar-card" style="margin-top:var(--space-lg)">
+        <h4 style="margin-bottom:var(--space-md)">👤 Landlord</h4>
+        <div style="display:flex;align-items:center;gap:var(--space-md);margin-bottom:var(--space-md)">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--primary-100);display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:var(--primary)">RK</div>
+          <div>
+            <div style="font-weight:700">Rajesh KC</div>
+            <div style="font-size:0.75rem;color:var(--gray-500)">Member since 2024</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-sm);font-size:0.8125rem;color:var(--gray-600)">
+          <div>✓ 3 Properties Listed</div>
+          <div>✓ 95% Response Rate</div>
+          <div>✓ Responds in 5 min</div>
+        </div>
+        <button class="btn btn-primary btn-sm" style="width:100%;justify-content:center;margin-top:var(--space-md)">💬 Message Landlord</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom"><div>© 2026 RoomSathi. All rights reserved.</div></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

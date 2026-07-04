@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Rooms - RoomSathi Nepal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🏠</div>
+      RoomSathi
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="search.html" style="color:var(--primary)">Browse Rooms</a>
+      <a href="dashboard-landlord.html">List Property</a>
+      <a href="dashboard-student.html">Dashboard</a>
+      <a href="index.html#reviews">Reviews</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn-icon" id="notifBtn">🔔<span class="badge">3</span></button>
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <a href="auth.html" class="btn btn-primary btn-sm">Sign In</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Find Your Perfect Room 🏠</h1>
+    <p><span id="resultCount"><strong>8</strong> properties found</span> across Kathmandu Valley</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="search-page-layout">
+    <!-- Filters Sidebar -->
+    <aside class="filter-sidebar">
+      <h4 style="margin-bottom:var(--space-lg)">Filters</h4>
+      
+      <div class="filter-section">
+        <div class="filter-title">💰 Budget (NPR/month)</div>
+        <input type="range" min="3000" max="50000" value="25000" style="margin-bottom:var(--space-sm)">
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--gray-500)">
+          <span>NPR 3,000</span>
+          <span style="font-weight:700;color:var(--primary)">NPR 25,000</span>
+          <span>NPR 50,000</span>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <div class="filter-title">📍 Location</div>
+        <div class="filter-options">
+          <label class="filter-checkbox"><input type="checkbox" checked> All Locations</label>
+          <label class="filter-checkbox"><input type="checkbox"> Kirtipur</label>
+          <label class="filter-checkbox"><input type="checkbox"> Pulchowk</label>
+          <label class="filter-checkbox"><input type="checkbox"> New Baneshwor</label>
+          <label class="filter-checkbox"><input type="checkbox"> Jawalakhel</label>
+          <label class="filter-checkbox"><input type="checkbox"> Dhulikhel</label>
+          <label class="filter-checkbox"><input type="checkbox"> Budhanilkantha</label>
+          <label class="filter-checkbox"><input type="checkbox"> Chhauni</label>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <div class="filter-title">🏠 Property Type</div>
+        <div class="filter-options">
+          <label class="filter-checkbox"><input type="checkbox" checked> All Types</label>
+          <label class="filter-checkbox"><input type="checkbox"> Studio</label>
+          <label class="filter-checkbox"><input type="checkbox"> Hostel</label>
+          <label class="filter-checkbox"><input type="checkbox"> Flat</label>
+          <label class="filter-checkbox"><input type="checkbox"> Room</label>
+          <label class="filter-checkbox"><input type="checkbox"> PG</label>
+          <label class="filter-checkbox"><input type="checkbox"> Apartment</label>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <div class="filter-title">👤 Gender</div>
+        <div class="filter-options">
+          <label class="filter-checkbox"><input type="checkbox" checked> All</label>
+          <label class="filter-checkbox"><input type="checkbox"> Boys Only</label>
+          <label class="filter-checkbox"><input type="checkbox"> Girls Only</label>
+          <label class="filter-checkbox"><input type="checkbox"> Family</label>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <div class="filter-title">✓ Status</div>
+        <div class="filter-options">
+          <label class="filter-checkbox"><input type="checkbox" checked> Verified Only</label>
+          <label class="filter-checkbox"><input type="checkbox"> Available Now</label>
+          <label class="filter-checkbox"><input type="checkbox"> With Virtual Tour</label>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <div class="filter-title">🛋️ Amenities</div>
+        <div class="filter-options">
+          <label class="filter-checkbox"><input type="checkbox"> Food Included</label>
+          <label class="filter-checkbox"><input type="checkbox"> WiFi</label>
+          <label class="filter-checkbox"><input type="checkbox"> Water 24/7</label>
+          <label class="filter-checkbox"><input type="checkbox"> Attached Bathroom</label>
+          <label class="filter-checkbox"><input type="checkbox"> Furnished</label>
+          <label class="filter-checkbox"><input type="checkbox"> AC</label>
+          <label class="filter-checkbox"><input type="checkbox"> Parking</label>
+          <label class="filter-checkbox"><input type="checkbox"> Generator</label>
+          <label class="filter-checkbox"><input type="checkbox"> Study Room</label>
+        </div>
+      </div>
+      
+      <div class="filter-section">
+        <div class="filter-title">🛡️ Minimum Safety Score</div>
+        <input type="range" min="0" max="100" value="75" style="margin-bottom:var(--space-sm)">
+        <div style="font-size:0.75rem;font-weight:700;color:var(--primary)">75+</div>
+      </div>
+      
+      <button class="btn btn-primary" style="width:100%;justify-content:center">Apply Filters</button>
+      <button class="btn btn-ghost" style="width:100%;justify-content:center;margin-top:var(--space-sm)">Clear All</button>
+    </aside>
+    
+    <!-- Results -->
+    <main>
+      <div class="search-results-header">
+        <div class="result-count" id="resultCountHeader">Showing <strong>8</strong> properties</div>
+        <div style="display:flex;gap:var(--space-sm);align-items:center">
+          <span style="font-size:0.8125rem;color:var(--gray-500)">Sort by:</span>
+          <select class="sort-select">
+            <option>Recommended</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest First</option>
+            <option>Safety Score</option>
+            <option>Distance: Nearest</option>
+          </select>
+          <div style="display:flex;gap:4px">
+            <button class="btn btn-sm btn-secondary" style="padding:8px">⊞</button>
+            <button class="btn btn-sm btn-ghost" style="padding:8px;color:var(--gray-400)">☰</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="listing-grid" id="searchResults"></div>
+      
+      <div style="text-align:center;margin-top:var(--space-2xl)">
+        <button class="btn btn-secondary btn-lg">Load More Properties →</button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Quick AI Match CTA -->
+<div style="position:fixed;bottom:100px;right:90px;z-index:99">
+  <a href="index.html#aiSection" class="ai-match-btn" style="text-decoration:none">✨ AI Room Finder</a>
+</div>
+
+<footer class="footer" style="margin-top:var(--space-3xl)">
+  <div class="container">
+    <div class="footer-grid" style="grid-template-columns:2fr 1fr 1fr 1fr">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">🏠</div>RoomSathi</a>
+        <p>Nepal's most trusted platform for finding rooms, hostels, and flats.</p>
+      </div>
+      <div><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="search.html">Browse Rooms</a></li><li><a href="index.html#aiSection">AI Room Finder</a></li></ul></div>
+      <div><h4>Support</h4><ul class="footer-links"><li><a href="#">Help Center</a></li><li><a href="#">Safety Tips</a></li><li><a href="#">Scam Reporting</a></li></ul></div>
+      <div><h4>Legal</h4><ul class="footer-links"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div>© 2026 RoomSathi</div></div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

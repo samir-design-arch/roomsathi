@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In / Sign Up - RoomSathi Nepal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">🏠</div>
+      RoomSathi
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="search.html">Browse Rooms</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <a href="auth.html" class="btn btn-primary btn-sm">Sign In</a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-header">
+      <a href="index.html" class="logo" style="justify-content:center;font-size:1.25rem">
+        <div class="logo-icon">🏠</div>
+        RoomSathi
+      </a>
+      <h2 id="authTitle">Create Your Account</h2>
+      <p>Join thousands of students finding rooms without broker fees</p>
+    </div>
+    
+    <!-- Toggle -->
+    <div style="display:flex;background:var(--gray-100);border-radius:var(--radius-full);padding:4px;margin-bottom:var(--space-xl)">
+      <button class="auth-toggle active" data-mode="register" style="flex:1;padding:10px;border-radius:var(--radius-full);font-weight:600;font-size:0.875rem;transition:all var(--transition-fast);background:var(--white);color:var(--gray-900);box-shadow:var(--shadow-sm)">Sign Up</button>
+      <button class="auth-toggle" data-mode="login" style="flex:1;padding:10px;border-radius:var(--radius-full);font-weight:600;font-size:0.875rem;transition:all var(--transition-fast);background:transparent;color:var(--gray-500)">Sign In</button>
+    </div>
+    
+    <!-- Social Login -->
+    <div class="social-auth" style="margin-bottom:var(--space-lg)">
+      <button class="social-auth-btn">📧 Continue with Google</button>
+      <button class="social-auth-btn">🔵 Continue with Facebook</button>
+    </div>
+    
+    <div class="form-divider">or continue with email</div>
+    
+    <!-- Form -->
+    <form class="auth-form" id="authForm">
+      <div class="form-group auth-extra">
+        <label>Full Name</label>
+        <input type="text" placeholder="Anjali Sharma" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="anjali@example.com" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="98XXXXXXXX" required>
+      </div>
+      <div class="form-group auth-extra">
+        <label>College / University</label>
+        <select required>
+          <option value="">Select your college</option>
+          <option>Pulchowk Engineering Campus</option>
+          <option>Tribhuvan University</option>
+          <option>Kathmandu University</option>
+          <option>St. Xavier's College</option>
+          <option>Padma Kanya College</option>
+          <option>Kantipur Engineering College</option>
+          <option>Himalaya College</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group auth-extra">
+        <label>I am a</label>
+        <select required>
+          <option>Student looking for room</option>
+          <option>Landlord with property to list</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="Create a strong password" required minlength="8">
+      </div>
+      <div class="form-group auth-extra">
+        <label>Confirm Password</label>
+        <input type="password" placeholder="Confirm your password" required>
+      </div>
+      
+      <label class="filter-checkbox" style="font-size:0.8125rem">
+        <input type="checkbox" checked> I agree to the <a href="#" style="color:var(--primary)">Terms of Service</a> and <a href="#" style="color:var(--primary)">Privacy Policy</a>
+      </label>
+      
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
+        Create Account →
+      </button>
+    </form>
+    
+    <div class="auth-footer">
+      Already have an account? <a href="#" id="switchToLogin">Sign In</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Simple auth toggle without full app.js (to avoid running all page scripts)
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtns = document.querySelectorAll('.auth-toggle');
+    const title = document.getElementById('authTitle');
+    const form = document.getElementById('authForm');
+    const extraFields = form.querySelectorAll('.auth-extra');
+    const switchLink = document.getElementById('switchToLogin');
+    
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+        toggleBtns.forEach(b => {
+          b.style.background = 'transparent';
+          b.style.color = 'var(--gray-500)';
+          b.style.boxShadow = 'none';
+          b.classList.remove('active');
+        });
+        btn.style.background = 'var(--white)';
+        btn.style.color = 'var(--gray-900)';
+        btn.style.boxShadow = 'var(--shadow-sm)';
+        btn.classList.add('active');
+        
+        title.textContent = mode === 'login' ? 'Welcome Back!' : 'Create Your Account';
+        extraFields.forEach(f => f.style.display = mode === 'register' ? 'flex' : 'none');
+        
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.textContent = mode === 'login' ? 'Sign In →' : 'Create Account →';
+      });
+    });
+    
+    if (switchLink) {
+      switchLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const loginBtn = document.querySelector('.auth-toggle[data-mode="login"]');
+        if (loginBtn) loginBtn.click();
+      });
+    }
+    
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const isRegister = document.querySelector('.auth-toggle.active')?.dataset.mode === 'register';
+        alert(isRegister ? '✅ Account created successfully! Welcome to RoomSathi.' : '✅ Welcome back! Redirecting to your dashboard...');
+        window.location.href = isRegister ? 'dashboard-student.html' : 'index.html';
+      });
+    }
+    
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    if (toggle) {
+      const saved = localStorage.getItem('roomsathi-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', saved);
+      toggle.innerHTML = saved === 'dark' ? '☀️' : '🌙';
+      toggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('roomsathi-theme', next);
+        toggle.innerHTML = next === 'dark' ? '☀️' : '🌙';
+      });
+    }
+  });
+</script>
+</body>
+</html>

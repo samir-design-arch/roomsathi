@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landlord Dashboard - RoomSathi Nepal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="header" style="border-bottom-color:var(--gray-800)">
+  <div class="container">
+    <a href="index.html" class="logo"><div class="logo-icon">🏠</div>RoomSathi</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="search.html">Browse</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <div style="display:flex;align-items:center;gap:var(--space-sm)">
+        <div style="width:32px;height:32px;border-radius:50%;background:var(--primary-100);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--primary)">RK</div>
+        <span style="font-size:0.8125rem;font-weight:600">Rajesh KC</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-layout">
+  <!-- Sidebar -->
+  <aside class="dashboard-sidebar">
+    <a href="index.html" class="logo" style="font-size:1.25rem"><div class="logo-icon">🏠</div>RoomSathi</a>
+    
+    <div class="dashboard-nav-item active">📊 Dashboard</div>
+    <div class="dashboard-nav-item">🏠 My Properties</div>
+    <div class="dashboard-nav-item">📅 Bookings</div>
+    <div class="dashboard-nav-item">💬 Messages <span style="margin-left:auto;background:var(--error);color:white;padding:2px 8px;border-radius:var(--radius-full);font-size:0.6875rem;font-weight:700">3</span></div>
+    <div class="dashboard-nav-item">💰 Revenue</div>
+    <div class="dashboard-nav-item">📈 Analytics</div>
+    <div class="dashboard-nav-item">⭐ Reviews</div>
+    <div class="dashboard-nav-item">⚙️ Settings</div>
+    
+    <div style="margin-top:auto;padding-top:var(--space-xl);border-top:1px solid rgba(255,255,255,0.1)">
+      <div class="dashboard-nav-item">🚪 Sign Out</div>
+    </div>
+  </aside>
+  
+  <!-- Main Content -->
+  <main class="dashboard-main">
+    <div class="dashboard-header">
+      <div>
+        <h1>Landlord Dashboard 👋</h1>
+        <p style="color:var(--gray-500);font-size:0.9375rem">Welcome back, Rajesh! Here's your overview.</p>
+      </div>
+      <div style="display:flex;gap:var(--space-md)">
+        <a href="index.html" class="btn btn-primary">
+          + Upload New Property
+        </a>
+        <button class="btn btn-secondary">📥 Export Report</button>
+      </div>
+    </div>
+    
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:var(--primary-50);color:var(--primary)">🏠</div>
+        <div class="stat-card-value" data-count="6">0</div>
+        <div class="stat-card-label">Total Properties</div>
+        <div class="stat-card-change stat-change-up">↑ 2 new this month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:#D1FAE5;color:#059669">📋</div>
+        <div class="stat-card-value" data-count="12">0</div>
+        <div class="stat-card-label">Active Bookings</div>
+        <div class="stat-card-change stat-change-up">↑ 80% occupancy</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:#FEF3C7;color:#D97706">💰</div>
+        <div class="stat-card-value" data-count="285000">NPR 0</div>
+        <div class="stat-card-label">Monthly Revenue</div>
+        <div class="stat-card-change stat-change-up">↑ 15% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:#DBEAFE;color:#2563EB">⭐</div>
+        <div class="stat-card-value">4.8</div>
+        <div class="stat-card-label">Average Rating</div>
+        <div class="stat-card-change stat-change-up">↑ Excellent</div>
+      </div>
+    </div>
+    
+    <!-- Recent Bookings Table -->
+    <div style="background:var(--white);border-radius:var(--radius-lg);padding:var(--space-xl);box-shadow:var(--shadow-card);margin-bottom:var(--space-xl)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-lg)">
+        <h4>Recent Bookings</h4>
+        <a href="#" style="font-size:0.8125rem;color:var(--primary);font-weight:600">View All →</a>
+      </div>
+      <table class="dashboard-table">
+        <thead>
+          <tr>
+            <th>Tenant</th>
+            <th>Property</th>
+            <th>Move-in</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:var(--space-sm)">
+                <div style="width:32px;height:32px;border-radius:50%;background:var(--primary-50);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--primary)">AS</div>
+                <div><div style="font-weight:600">Anjali Sharma</div><div style="font-size:0.75rem;color:var(--gray-500)">Pulchowk Campus</div></div>
+              </div>
+            </td>
+            <td>Modern Studio</td>
+            <td>Jul 15, 2026</td>
+            <td>NPR 15,000</td>
+            <td><span class="status-badge status-active">Confirmed</span></td>
+            <td><button class="btn btn-sm btn-ghost">📧</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:var(--space-sm)">
+                <div style="width:32px;height:32px;border-radius:50%;background:#D1FAE5;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#059669">RT</div>
+                <div><div style="font-weight:600">Rahul Thapa</div><div style="font-size:0.75rem;color:var(--gray-500)">TU Kirtipur</div></div>
+              </div>
+            </td>
+            <td>Boys Hostel Room</td>
+            <td>Jul 20, 2026</td>
+            <td>NPR 8,000</td>
+            <td><span class="status-badge status-pending">Pending</span></td>
+            <td><button class="btn btn-sm btn-primary">Approve</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:var(--space-sm)">
+                <div style="width:32px;height:32px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#DC2626">PG</div>
+                <div><div style="font-weight:600">Priya Gurung</div><div style="font-size:0.75rem;color:var(--gray-500)">KU</div></div>
+              </div>
+            </td>
+            <td>Girls Hostel</td>
+            <td>Aug 1, 2026</td>
+            <td>NPR 7,000</td>
+            <td><span class="status-badge status-completed">Completed</span></td>
+            <td><button class="btn btn-sm btn-ghost">📧</button></td>
+          </tr>
+          <tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:var(--space-sm)">
+                <div style="width:32px;height:32px;border-radius:50%;background:#FEF3C7;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#D97706">SA</div>
+                <div><div style="font-weight:600">Suman Adhikari</div><div style="font-size:0.75rem;color:var(--gray-500)">St. Xavier's</div></div>
+              </div>
+            </td>
+            <td>Premium 1BHK</td>
+            <td>Jul 10, 2026</td>
+            <td>NPR 25,000</td>
+            <td><span class="status-badge status-active">Confirmed</span></td>
+            <td><button class="btn btn-sm btn-ghost">📧</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Property Performance -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-lg)">
+      <div style="background:var(--white);border-radius:var(--radius-lg);padding:var(--space-xl);box-shadow:var(--shadow-card)">
+        <h4 style="margin-bottom:var(--space-lg)">📈 Occupancy Rate</h4>
+        <div style="display:flex;align-items:flex-end;gap:var(--space-sm);height:120px">
+          <div style="flex:1;background:var(--primary-50);border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:60%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:var(--gray-500)">Jan</div>
+          <div style="flex:1;background:var(--primary-50);border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:70%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:var(--gray-500)">Feb</div>
+          <div style="flex:1;background:var(--primary-100);border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:65%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:var(--gray-500)">Mar</div>
+          <div style="flex:1;background:var(--primary-100);border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:80%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:var(--gray-500)">Apr</div>
+          <div style="flex:1;background:var(--primary-200);border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:85%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:var(--gray-500)">May</div>
+          <div style="flex:1;background:var(--primary);border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:92%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:white">Jun</div>
+        </div>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-lg);padding:var(--space-xl);box-shadow:var(--shadow-card)">
+        <h4 style="margin-bottom:var(--space-lg)">📊 Revenue Overview</h4>
+        <div style="display:flex;align-items:flex-end;gap:var(--space-sm);height:120px">
+          <div style="flex:1;background:#D1FAE5;border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:40%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:#065F46">Jan</div>
+          <div style="flex:1;background:#D1FAE5;border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:55%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:#065F46">Feb</div>
+          <div style="flex:1;background:#A7F3D0;border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:50%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:#065F46">Mar</div>
+          <div style="flex:1;background:#A7F3D0;border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:70%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:#065F46">Apr</div>
+          <div style="flex:1;background:#34D399;border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:80%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:#065F46">May</div>
+          <div style="flex:1;background:var(--success);border-radius:var(--radius-sm) var(--radius-sm) 0 0;height:100%;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:0.625rem;color:white">Jun</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quick Upload -->
+    <div style="margin-top:var(--space-xl);background:linear-gradient(135deg,var(--primary),#6366F1);border-radius:var(--radius-lg);padding:var(--space-2xl);text-align:center;color:white">
+      <h3 style="color:white;margin-bottom:var(--space-md)">➕ List a New Property</h3>
+      <p style="color:rgba(255,255,255,0.8);margin-bottom:var(--space-lg);max-width:500px;margin-left:auto;margin-right:auto">
+        Reach thousands of students looking for rooms. List your property in under 5 minutes.
+      </p>
+      <a href="index.html" class="btn btn-lg" style="background:white;color:var(--primary);justify-content:center">Upload Property Now →</a>
+    </div>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
